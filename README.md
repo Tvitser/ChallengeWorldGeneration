@@ -24,9 +24,25 @@ A Minecraft 1.7.10 Forge mod that adds a custom world type called "Garden Of Gri
 
 This mod requires ForgeGradle 1.2 and Minecraft Forge 1.7.10.
 
+### Important: Use the Gradle Wrapper
+
+**Always use `./gradlew` instead of `gradle`** to build this mod. The Gradle wrapper ensures you use Gradle 2.0, which is compatible with ForgeGradle 1.2. Using a newer system Gradle version (like 9.x) will cause warnings like:
+
+```
+Listener registration 'Gradle.addBuildListener' by build 'GardenOfGrind' is unsupported.
+```
+
+### Build Commands
+
 ```bash
+# Setup the development workspace
+./gradlew setupDecompWorkspace
+
+# Build the mod
 ./gradlew build
 ```
+
+The compiled JAR will be in `build/libs/`.
 
 ## Compatibility
 
