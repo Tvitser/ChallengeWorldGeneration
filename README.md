@@ -2,15 +2,18 @@
 
 A Minecraft 1.7.10 Forge mod that adds a custom world type called "Garden Of Grind" for GTNH (GregTech: New Horizons).
 
+This mod uses the GTNH mod structure and build system.
+
 ## Features
 
 - **Empty World Generation**: Generates worlds with absolutely no blocks and no structures
 - **Biome Support**: Integrates with RWG (Realistic World Gen) biomes if available, falls back to vanilla biomes
 - **Challenge Mode**: Perfect for skyblock-style challenges or custom gameplay
+- **GTNH Compatible**: Built using GTNH conventions and RetroFuturaGradle
 
 ## Installation
 
-1. Download the mod JAR file
+1. Download the mod JAR file from releases
 2. Place it in your Minecraft 1.7.10 `mods` folder
 3. Launch Minecraft with Forge installed
 
@@ -22,41 +25,55 @@ A Minecraft 1.7.10 Forge mod that adds a custom world type called "Garden Of Gri
 
 ## Building
 
-This mod requires ForgeGradle 1.2 and Minecraft Forge 1.7.10.
+This mod uses the GTNH build system with RetroFuturaGradle.
 
-### Important: Use the Gradle Wrapper
-
-**Always use `./gradlew` instead of `gradle`** to build this mod. The Gradle wrapper ensures you use Gradle 2.0, which is compatible with ForgeGradle 1.2. Using a newer system Gradle version (like 9.x) will cause warnings like:
-
-```
-Listener registration 'Gradle.addBuildListener' by build 'GardenOfGrind' is unsupported.
-```
-
-### Build Commands
+### Setup Development Workspace
 
 ```bash
-# Setup the development workspace
 ./gradlew setupDecompWorkspace
+```
 
-# Build the mod
+### Build the Mod
+
+```bash
 ./gradlew build
 ```
 
-The compiled JAR will be in `build/libs/`.
+The compiled JAR will be in `build/libs/`
+
+### Run in Development
+
+```bash
+# Run client
+./gradlew runClient
+
+# Run server
+./gradlew runServer
+```
 
 ## Compatibility
 
 - **Minecraft Version**: 1.7.10
 - **Forge Version**: 10.13.4.1614 or later
+- **Build System**: RetroFuturaGradle (GTNH)
 - **Optional**: RWG (Realistic World Gen) for enhanced biome generation
 
 ## Technical Details
 
-The mod consists of three main components:
+The mod consists of the following components:
 
-- `WorldTypeGardenOfGrind`: Registers the custom world type
+- `GardenOfGrind`: Main mod class with event handlers
+- `CommonProxy`/`ClientProxy`: Side-specific initialization logic
+- `WorldTypeGardenOfGrind`: Registers the custom world type with RWG integration
 - `ChunkProviderGardenOfGrind`: Generates empty chunks with biome data only
-- `GardenOfGrind`: Main mod class that initializes the world type
+
+## Development
+
+This project follows GTNH modding conventions:
+- Uses Kotlin-based Gradle build scripts
+- Implements the proxy pattern for client/server separation
+- Utilizes GTNH's RetroFuturaGradle for modern Java syntax support
+- Follows GTNH code style and structure guidelines
 
 ## License
 
