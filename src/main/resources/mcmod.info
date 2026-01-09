@@ -1,0 +1,16 @@
+[
+{
+  "modid": "gardenofgrind",
+  "name": "Garden Of Grind",
+  "description": "Adds a custom world type 'Garden Of Grind' with empty world generation and RWG biomes",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Tvitser"],
+  "credits": "GTNH RWG team",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
