@@ -1,0 +1,22 @@
+{
+	"modListVersion": 2,
+	"modList": [{
+		"modid": "${modId}",
+		"name": "${modName}",
+		"description": "Adds a custom world type 'Garden Of Grind' with empty world generation and RWG biomes for GTNH challenge gameplay",
+		"version": "${modVersion}",
+		"mcversion": "${minecraftVersion}",
+		"url": "https://github.com/Tvitser/ChallengeWorldGeneration",
+		"updateUrl": "",
+		"authorList": ["Tvitser"],
+		"credits": "GTNH RWG team",
+		"logoFile": "",
+		"screenshots": [],
+		"parent": "",
+		"requiredMods": [],
+		"dependencies": [],
+		"dependants": [],
+		"useDependencyInformation": false
+	}]
+}
+
